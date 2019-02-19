@@ -33,4 +33,52 @@ public class Blog {
      * 分类id
      */
     private String classifyId;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public StringBuffer getText() {
+        return text;
+    }
+
+    public void setText(StringBuffer text) {
+        this.text = text;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Date getLastModifyTime() {
+        return lastModifyTime;
+    }
+
+    public void setLastModifyTime(Date lastModifyTime) {
+        this.lastModifyTime = lastModifyTime;
+    }
+
+    public String getClassifyId() {
+        return classifyId;
+    }
+
+    public void setClassifyId(String classifyId) {
+        this.classifyId = classifyId;
+    }
 }
