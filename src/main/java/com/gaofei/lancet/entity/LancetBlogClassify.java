@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Description 博客分类
+ * @Description 博客分类bean
  * @Date 2019-2-18 22:49
  * @Author GaoFei
  * @Version 1.0

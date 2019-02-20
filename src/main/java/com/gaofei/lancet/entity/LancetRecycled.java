@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * @Description 回收站
+ * @Description 回收站bean
  * @Date 2019-2-18 22:52
  * @Author GaoFei
  * @Version 1.0
