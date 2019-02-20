@@ -26,7 +26,7 @@
 		<property name="dataSource">
 			<ref bean="dataSource"/>
 		</property>
-		<property name="packagesToScan" value="com.gaofei.lancet.entity"/>
+		<property name="packagesToScan" value="com.lancet.entity"/>
 		<property name="hibernateProperties">
 			<props>
 				<!--指定数据库方言-->
@@ -55,5 +55,5 @@
 
 	<!-- 扫描注解的bean -->
 	<context:component-scan
-			base-package="com.gaofei.lancet.controller,com.gaofei.lancet.service.impl,com.gaofei.lancet.dao.impl"/>
+			base-package="com.lancet.controller,com.lancet.service.impl,com.lancet.dao.impl"/>
 </beans>
