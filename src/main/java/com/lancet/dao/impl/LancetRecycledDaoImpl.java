@@ -5,7 +5,6 @@ import com.lancet.entity.LancetRecycled;
 import com.lancet.util.ListUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.Map;
  * @Version 1.0
  **/
 @Repository
-public class LancetRecycledDaoImpl extends HibernateDaoSupport implements LancetRecycledDao {
+public class LancetRecycledDaoImpl extends BaseDaoImpl implements LancetRecycledDao {
     @Override
     public void add(LancetRecycled lancetRecycled) {
         Session session = this.getSessionFactory().openSession();

@@ -5,7 +5,6 @@ import com.lancet.entity.LancetUser;
 import com.lancet.util.ListUtil;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.springframework.orm.hibernate4.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.Map;
  * @Version 1.0
  **/
 @Repository
-public class LancetUserDaoImpl extends HibernateDaoSupport implements LancetUserDao {
+public class LancetUserDaoImpl extends BaseDaoImpl implements LancetUserDao {
     @Override
     public void add(LancetUser lancetUser) {
         Session session = this.getSessionFactory().openSession();

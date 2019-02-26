@@ -52,8 +52,4 @@
 		<aop:pointcut expression="execution(* main.java.com.jboa.service.impl.*.*(..))" id="pointcut"/>
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="pointcut"/>
 	</aop:config>
-
-	<!-- 扫描注解的bean -->
-	<context:component-scan
-			base-package="com.lancet.controller,com.lancet.service.impl,com.lancet.dao.impl"/>
 </beans>

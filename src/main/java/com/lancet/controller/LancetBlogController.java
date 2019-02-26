@@ -1,6 +1,10 @@
 package com.lancet.controller;
 
+import com.lancet.service.LancetBlogService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 
 /**
  * @Description 博客Controller
@@ -9,5 +13,14 @@ import org.springframework.stereotype.Controller;
  * @Version 1.0
  **/
 @Controller
+@RequestMapping("/blog/main")
 public class LancetBlogController {
+
+    @Resource
+    private LancetBlogService lancetBlogService;
+
+    @RequestMapping("/index")
+    public String index() {
+        return "blog/main/index";
+    }
 }

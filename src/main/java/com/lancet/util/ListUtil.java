@@ -1,5 +1,6 @@
 package com.lancet.util;
 
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -11,25 +12,22 @@ import java.util.List;
 public final class ListUtil {
     /**
      * 当前集合是否为空
-     * @param list
+     * @param collection
      * @return
      */
-    public static boolean isEmpty(List list) {
-        boolean result = false;
-        if (null == list) {
-            result = true;
-        } else if (list.isEmpty()) {
-            result = true;
+    public static boolean isEmpty(Collection collection) {
+        if (null == collection) {
+            return true;
         }
-        return result;
+        return collection.isEmpty();
     }
 
     /**
      * 当前集合是否不为空
-     * @param list
+     * @param collection
      * @return
      */
-    public static boolean isNotEmpty(List list) {
-        return !isEmpty(list);
+    public static boolean isNotEmpty(Collection collection) {
+        return !isEmpty(collection);
     }
 }
