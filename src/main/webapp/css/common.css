@@ -1,0 +1,14 @@
+.a {
+    text-decoration: none;
+}
+.clearBorder {
+    margin: 0;
+    padding: 0;
+}
+.centerText {
+    line-height: 100%;
+    text-align: center;
+}
+.maxWidth {
+    width: 100%;
+}

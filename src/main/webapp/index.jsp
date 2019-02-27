@@ -1,22 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <head>
     <title>Lancet - 首页</title>
+    <link rel="shortcut icon" href="/img/ico.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/css/common.css" />
 </head>
 <style>
-    .a {
-        text-decoration: none;
-    }
-    .clearBorder {
-        margin: 0;
-        padding: 0;
-    }
-    .centerText {
-        line-height: 100%;
-        text-align: center;
-    }
-    .maxWidth {
-        width: 100%;
-    }
     #top {
         height: 5%;
         background-color: #1b6d85;

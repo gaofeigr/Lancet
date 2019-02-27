@@ -34,27 +34,27 @@
     <!-- 多视图解析器 -->
     <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
         <!-- 指定json 用什么工具解析  xml 用什么工具解析 -->
-        <property name="defaultViews">
-            <list>
-                <bean class="com.alibaba.fastjson.support.spring.FastJsonJsonView">
-                    <property name="charset" value="UTF-8"/>
-                </bean>
-                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
-                    <constructor-arg>
-                        <bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
-                            <property name="classesToBeBound">
-                                <list>
-                                    <value>com.lancet.entity.LancetBlog</value>
-                                    <value>com.lancet.entity.LancetUser</value>
-                                    <value>com.lancet.entity.LancetBlogClassify</value>
-                                    <value>com.lancet.entity.LancetRecycled</value>
-                                </list>
-                            </property>
-                        </bean>
-                    </constructor-arg>
-                </bean>
-            </list>
-        </property>
+        <!--<property name="defaultViews">-->
+            <!--<list>-->
+                <!--<bean class="com.alibaba.fastjson.support.spring.FastJsonJsonView">-->
+                    <!--<property name="charset" value="UTF-8"/>-->
+                <!--</bean>-->
+                <!--<bean class="org.springframework.web.servlet.view.xml.MarshallingView">-->
+                    <!--<constructor-arg>-->
+                        <!--<bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">-->
+                            <!--<property name="classesToBeBound">-->
+                                <!--<list>-->
+                                    <!--<value>com.lancet.entity.LancetBlog</value>-->
+                                    <!--<value>com.lancet.entity.LancetUser</value>-->
+                                    <!--<value>com.lancet.entity.LancetBlogClassify</value>-->
+                                    <!--<value>com.lancet.entity.LancetRecycled</value>-->
+                                <!--</list>-->
+                            <!--</property>-->
+                        <!--</bean>-->
+                    <!--</constructor-arg>-->
+                <!--</bean>-->
+            <!--</list>-->
+        <!--</property>-->
         <!-- 指定 jsp解析器,完成视图的对应 -->
         <property name="viewResolvers">
             <list>
@@ -71,8 +71,7 @@
         <property name="maxUploadSize" value="9223372036854775807"/>
     </bean>
     <!-- 扫描注解的bean -->
-    <context:component-scan
-            base-package="com.lancet.controller,com.lancet.service.impl,com.lancet.dao.impl"/>
+    <context:component-scan base-package="com.lancet"/>
     <!--配置用户登录验证 start-->
     <!--<mvc:interceptors>-->
         <!--<mvc:interceptor>-->
