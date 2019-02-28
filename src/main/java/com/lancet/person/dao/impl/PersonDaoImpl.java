@@ -41,7 +41,7 @@ public class PersonDaoImpl extends BaseDaoImpl implements PersonDao {
     }
 
     @Override
-    public Person findById(String id) {
+    public Person findById(Integer id) {
         Person result = null;
         String hql = "from Person where id = :id";
         Session session = this.getSessionFactory().openSession();

@@ -38,7 +38,7 @@ public interface BlogClassifyDao {
      * @param id
      * @return
      */
-    BlogClassify findById(String id);
+    BlogClassify findById(Integer id);
 
     /**
      * 根据hql查找

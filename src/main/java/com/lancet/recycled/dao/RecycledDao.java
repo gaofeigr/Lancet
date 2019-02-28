@@ -38,7 +38,7 @@ public interface RecycledDao {
      * @param id
      * @return
      */
-    Recycled findById(String id);
+    Recycled findById(Integer id);
 
     /**
      * 根据hql查找

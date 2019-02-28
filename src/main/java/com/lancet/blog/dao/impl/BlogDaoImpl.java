@@ -41,7 +41,7 @@ public class BlogDaoImpl extends BaseDaoImpl implements BlogDao {
     }
 
     @Override
-    public Blog findById(String id) {
+    public Blog findById(Integer id) {
         Blog result = null;
         String hql = "from Blog where id = :id";
         Session session = this.getSessionFactory().openSession();

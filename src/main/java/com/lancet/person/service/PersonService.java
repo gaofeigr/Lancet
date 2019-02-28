@@ -35,5 +35,5 @@ public interface PersonService {
      * @param id
      * @return
      */
-    Person findById(String id);
+    Person findById(Integer id);
 }

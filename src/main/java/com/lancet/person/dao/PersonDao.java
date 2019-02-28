@@ -38,7 +38,7 @@ public interface PersonDao {
      * @param id
      * @return
      */
-    Person findById(String id);
+    Person findById(Integer id);
 
     /**
      * 根据hql查找

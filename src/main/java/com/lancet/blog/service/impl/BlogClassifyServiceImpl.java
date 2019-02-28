@@ -34,7 +34,7 @@ public class BlogClassifyServiceImpl implements BlogClassifyService {
     }
 
     @Override
-    public BlogClassify findById(String id) {
+    public BlogClassify findById(Integer id) {
         return blogClassifyDao.findById(id);
     }
 }

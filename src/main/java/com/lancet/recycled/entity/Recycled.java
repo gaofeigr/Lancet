@@ -45,7 +45,9 @@ public class Recycled {
     /**
      * 实体属性(json格式{属性:值})
      */
-    private StringBuffer entityPropertys;
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
+    private String entityPropertys;
     /**
      * 操作者
      */
@@ -93,19 +95,19 @@ public class Recycled {
         this.entityClassName = entityClassName;
     }
 
-    public StringBuffer getEntityPropertys() {
-        return entityPropertys;
-    }
-
-    public void setEntityPropertys(StringBuffer entityPropertys) {
-        this.entityPropertys = entityPropertys;
-    }
-
     public Person getOperatePersonId() {
         return operatePersonId;
     }
 
     public void setOperatePersonId(Person operatePersonId) {
         this.operatePersonId = operatePersonId;
+    }
+
+    public String getEntityPropertys() {
+        return entityPropertys;
+    }
+
+    public void setEntityPropertys(String entityPropertys) {
+        this.entityPropertys = entityPropertys;
     }
 }

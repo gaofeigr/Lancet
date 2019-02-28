@@ -38,7 +38,7 @@ public interface BlogDao {
      * @param id
      * @return
      */
-    Blog findById(String id);
+    Blog findById(Integer id);
 
     /**
      * 根据hql查找

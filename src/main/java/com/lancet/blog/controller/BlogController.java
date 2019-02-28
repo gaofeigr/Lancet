@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @Description 博客Controller
@@ -40,6 +41,10 @@ public class BlogController {
 
     @RequestMapping("/save")
     public String saveBlog(Blog blog) {
+        blog.setClassify(blogClassifyService.findById(1));
+        blog.setCreatePerson(personService.findById(1));
+        blog.setCreateTime(new Date());
+        blogService.add(blog);
         return "/common/msg/success";
     }
 }

@@ -35,5 +35,5 @@ public interface BlogClassifyService {
      * @param id
      * @return
      */
-    BlogClassify findById(String id);
+    BlogClassify findById(Integer id);
 }

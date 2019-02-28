@@ -35,5 +35,5 @@ public interface RecycledService {
      * @param id
      * @return
      */
-    Recycled findById(String id);
+    Recycled findById(Integer id);
 }

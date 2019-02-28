@@ -34,7 +34,7 @@ public class RecycledServiceImpl implements RecycledService {
     }
 
     @Override
-    public Recycled findById(String id) {
+    public Recycled findById(Integer id) {
         return recycledDao.findById(id);
     }
 }

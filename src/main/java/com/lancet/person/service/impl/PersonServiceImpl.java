@@ -34,7 +34,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     @Override
-    public Person findById(String id) {
+    public Person findById(Integer id) {
         return personDao.findById(id);
     }
 }

@@ -26,8 +26,10 @@ public class Blog {
     /**
      * 正文
      */
+    @Lob
+    @Basic(fetch = FetchType.LAZY)
     @Column(nullable = false)
-    private StringBuffer text;
+    private String text;
     /**
      * 创建时间
      */
@@ -56,14 +58,6 @@ public class Blog {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public StringBuffer getText() {
-        return text;
-    }
-
-    public void setText(StringBuffer text) {
-        this.text = text;
     }
 
     public Date getCreateTime() {
@@ -96,5 +90,13 @@ public class Blog {
 
     public void setClassify(BlogClassify classify) {
         this.classify = classify;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 }

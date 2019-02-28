@@ -35,5 +35,5 @@ public interface BlogService {
      * @param id
      * @return
      */
-    Blog findById(String id);
+    Blog findById(Integer id);
 }

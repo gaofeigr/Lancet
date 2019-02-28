@@ -41,7 +41,7 @@ public class RecycledDaoImpl extends BaseDaoImpl implements RecycledDao {
     }
 
     @Override
-    public Recycled findById(String id) {
+    public Recycled findById(Integer id) {
         Recycled result = null;
         String hql = "from Recycled where id = :id";
         Session session = this.getSessionFactory().openSession();
