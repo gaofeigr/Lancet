@@ -41,10 +41,9 @@ public class BlogController {
 
     @RequestMapping("/save")
     public String saveBlog(Blog blog) {
-        blog.setClassify(blogClassifyService.findById(1));
         blog.setCreatePerson(personService.findById(1));
         blog.setCreateTime(new Date());
-        blogService.add(blog);
+//        blogService.add(blog);
         return "/common/msg/success";
     }
 }

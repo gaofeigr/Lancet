@@ -25,6 +25,7 @@
         <div id="middle" class="maxWidth centerText">
             //todo middle
             <p><a href="${contextPath}/blog/main/index">我的博客</a></p>
+            <p><a href="${contextPath}/person/main/index">用户管理</a></p>
         </div>
         <div id="bottom" class="maxWidth centerText">
             //todo bottom

@@ -9,13 +9,12 @@
 <%@ include file="/jsp/common/import/common.jsp" %>
 <html>
     <head>
-        <title>Lancet - 博客首页</title>
+        <title>Lancet - 博客分类</title>
     </head>
     <body>
         <h1>
-            博客首页
+            博客分类
         </h1>
-        <a href="${contextPath}/blog/main/add">创建博客</a>
-        <a href="${contextPath}/blogClassify/main/add">创建博客分类</a>
+        <a href="${contextPath}/blog/main/add">创建博客分类</a>
     </body>
 </html>
