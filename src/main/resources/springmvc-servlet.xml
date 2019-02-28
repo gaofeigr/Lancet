@@ -44,10 +44,10 @@
                         <!--<bean class="org.springframework.oxm.jaxb.Jaxb2Marshaller">-->
                             <!--<property name="classesToBeBound">-->
                                 <!--<list>-->
-                                    <!--<value>com.lancet.entity.LancetBlog</value>-->
-                                    <!--<value>com.lancet.entity.LancetUser</value>-->
-                                    <!--<value>com.lancet.entity.LancetBlogClassify</value>-->
-                                    <!--<value>com.lancet.entity.LancetRecycled</value>-->
+                                    <!--<value>com.lancet.entity.Blog</value>-->
+                                    <!--<value>com.lancet.entity.User</value>-->
+                                    <!--<value>com.lancet.entity.BlogClassify</value>-->
+                                    <!--<value>com.lancet.entity.Recycled</value>-->
                                 <!--</list>-->
                             <!--</property>-->
                         <!--</bean>-->

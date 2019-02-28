@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="/jsp/common/import/common.jsp" %>
 <head>
     <title>Lancet - 首页</title>
-    <link rel="shortcut icon" href="/img/ico.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/css/common.css" />
 </head>
 <style>
     #top {
@@ -25,7 +24,7 @@
         </div>
         <div id="middle" class="maxWidth centerText">
             //todo middle
-            <p><a class="a" href="${pageContext.request.contextPath}/blog/main/index">我的博客</a></p>
+            <p><a href="${contextPath}/blog/main/index">我的博客</a></p>
         </div>
         <div id="bottom" class="maxWidth centerText">
             //todo bottom
