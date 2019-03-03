@@ -7,8 +7,9 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<link rel="shortcut icon" href="/img/ico.ico" type="image/x-icon" />
-<link rel="stylesheet" type="text/css" href="/css/common.css" />
+<link rel="shortcut icon" href="${contextPath}/img/ico.ico" type="image/x-icon" />
+<%@ include file="/jsp/common/import/css.jsp" %>
+<%@ include file="/jsp/common/import/js.jsp" %>
 <%
     request.setAttribute("contextPath", request.getContextPath());
 %>
