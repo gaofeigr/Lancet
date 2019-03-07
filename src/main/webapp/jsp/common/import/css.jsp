@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<link rel="stylesheet" type="text/css" href="${contextPath}/css/common.css" />
-<link rel="stylesheet" type="text/css" href="${contextPath}/css/bootstrap/bootstrap.css" />
-<link rel="stylesheet" type="text/css" href="${contextPath}/css/bootstrap/bootstrap-theme.css" />
+<link href="${contextPath}/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="${contextPath}/css/bootstrap/font-awesome.min.css" rel="stylesheet">
+<link href="${contextPath}/css/bootstrap/animate.min.css" rel="stylesheet">
+<link href="${contextPath}/css/bootstrap/style.min.css" rel="stylesheet">
