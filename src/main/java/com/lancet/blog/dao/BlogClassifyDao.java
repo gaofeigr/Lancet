@@ -1,5 +1,6 @@
 package com.lancet.blog.dao;
 
+import com.lancet.base.dao.BaseDao;
 import com.lancet.blog.entity.BlogClassify;
 
 import java.util.List;
@@ -11,40 +12,5 @@ import java.util.Map;
  * @Author GaoFei
  * @Version 1.0
  **/
-public interface BlogClassifyDao {
-    /**
-     * 新增
-     * @param blogClassify
-     * @return
-     */
-    void add(BlogClassify blogClassify);
-
-    /**
-     * 更新
-     * @param blogClassify
-     * @return
-     */
-    void update(BlogClassify blogClassify);
-
-    /**
-     * 删除
-     * @param blogClassify
-     * @return
-     */
-    void delete(BlogClassify blogClassify);
-
-    /**
-     * 根据主键查找
-     * @param id
-     * @return
-     */
-    BlogClassify findById(Integer id);
-
-    /**
-     * 根据hql查找
-     * @param hql
-     * @param parameters key:key, value:参数实际值
-     * @return
-     */
-    List<BlogClassify> findByHql(String hql, Map<String, Object> parameters);
+public interface BlogClassifyDao extends BaseDao {
 }

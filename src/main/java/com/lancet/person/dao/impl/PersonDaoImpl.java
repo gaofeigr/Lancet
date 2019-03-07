@@ -19,50 +19,5 @@ import java.util.Map;
  **/
 @Repository
 public class PersonDaoImpl extends BaseDaoImpl implements PersonDao {
-    @Override
-    public void add(Person person) {
-        Session session = this.getSessionFactory().openSession();
-        session.save(person);
-        session.close();
-    }
 
-    @Override
-    public void update(Person person) {
-        Session session = this.getSessionFactory().openSession();
-        session.update(person);
-        session.close();
-    }
-
-    @Override
-    public void delete(Person person) {
-        Session session = this.getSessionFactory().openSession();
-        session.delete(person);
-        session.close();
-    }
-
-    @Override
-    public Person findById(Integer id) {
-        Person result = null;
-        String hql = "from Person where id = :id";
-        Session session = this.getSessionFactory().openSession();
-        List<Person> persons = session.createQuery(hql).setParameter("id", id).list();
-        session.close();
-        if (ListUtil.isNotEmpty(persons)) {
-            result = persons.get(0);
-        }
-        return result;
-    }
-
-    @Override
-    public List<Person> findByHql(String hql, Map<String, Object> parameters) {
-        List<Person> result = null;
-        Session session = this.getSessionFactory().openSession();
-        Query query = session.createQuery(hql);
-        for (String key : parameters.keySet()) {
-            query.setParameter(key, parameters.get(key));
-        }
-        session.close();
-        result = query.list();
-        return result;
-    }
 }

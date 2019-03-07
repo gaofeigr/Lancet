@@ -1,5 +1,6 @@
 package com.lancet.recycled.service.impl;
 
+import com.lancet.base.service.impl.BaseServiceImpl;
 import com.lancet.recycled.dao.RecycledDao;
 import com.lancet.recycled.entity.Recycled;
 import com.lancet.recycled.service.RecycledService;
@@ -13,28 +14,8 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  **/
 @Service
-public class RecycledServiceImpl implements RecycledService {
+public class RecycledServiceImpl extends BaseServiceImpl implements RecycledService {
 
     @Autowired
     RecycledDao recycledDao;
-
-    @Override
-    public void add(Recycled recycled) {
-        recycledDao.add(recycled);
-    }
-
-    @Override
-    public void update(Recycled recycled) {
-        recycledDao.update(recycled);
-    }
-
-    @Override
-    public void delete(Recycled recycled) {
-        recycledDao.delete(recycled);
-    }
-
-    @Override
-    public Recycled findById(Integer id) {
-        return recycledDao.findById(id);
-    }
 }

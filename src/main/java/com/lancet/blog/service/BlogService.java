@@ -1,5 +1,6 @@
 package com.lancet.blog.service;
 
+import com.lancet.base.service.BaseService;
 import com.lancet.blog.entity.Blog;
 
 /**
@@ -8,32 +9,5 @@ import com.lancet.blog.entity.Blog;
  * @Author GaoFei
  * @Version 1.0
  **/
-public interface BlogService {
-    /**
-     * 新增
-     * @param blog
-     * @return
-     */
-    void add(Blog blog);
-
-    /**
-     * 更新
-     * @param blog
-     * @return
-     */
-    void update(Blog blog);
-
-    /**
-     * 删除
-     * @param blog
-     * @return
-     */
-    void delete(Blog blog);
-
-    /**
-     * 根据主键查找
-     * @param id
-     * @return
-     */
-    Blog findById(Integer id);
+public interface BlogService extends BaseService {
 }

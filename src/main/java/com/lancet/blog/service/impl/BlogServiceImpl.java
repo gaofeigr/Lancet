@@ -1,5 +1,6 @@
 package com.lancet.blog.service.impl;
 
+import com.lancet.base.service.impl.BaseServiceImpl;
 import com.lancet.blog.dao.BlogDao;
 import com.lancet.blog.entity.Blog;
 import com.lancet.blog.service.BlogService;
@@ -13,28 +14,8 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  **/
 @Service
-public class BlogServiceImpl implements BlogService {
+public class BlogServiceImpl extends BaseServiceImpl implements BlogService {
 
     @Autowired
     BlogDao blogDao;
-
-    @Override
-    public void add(Blog blog) {
-        blogDao.add(blog);
-    }
-
-    @Override
-    public void update(Blog blog) {
-        blogDao.update(blog);
-    }
-
-    @Override
-    public void delete(Blog blog) {
-        blogDao.delete(blog);
-    }
-
-    @Override
-    public Blog findById(Integer id) {
-        return blogDao.findById(id);
-    }
 }

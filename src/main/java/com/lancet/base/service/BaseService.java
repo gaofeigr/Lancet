@@ -1,16 +1,15 @@
-package com.lancet.base.dao;
+package com.lancet.base.service;
 
-import com.lancet.person.entity.Person;
-
-import java.util.List;
+import com.lancet.base.dao.BaseDao;
+import com.lancet.blog.entity.BlogClassify;
 
 /**
- * @Description 数据层基类，所有dao都要继承此dao
- * @Date 2019-3-7 23:23
+ * @Description 服务层基类，所有service都要继承此service
+ * @Date 2019-3-8 00:31
  * @Author GaoFei
  * @Version 1.0
  **/
-public interface BaseDao {
+public interface BaseService {
 
     /**
      * 获取class全名
@@ -23,6 +22,18 @@ public interface BaseDao {
      * @return
      */
     String getEntityName();
+
+    /**
+     * 获取BeanName
+     * @return
+     */
+    String getBeanName();
+
+    /**
+     * 获取BaseDao
+     * @return
+     */
+    BaseDao getBaseDao();
 
     /**
      * 新增
@@ -46,24 +57,9 @@ public interface BaseDao {
     void delete(Object entity);
 
     /**
-     * 根据主键删除
-     * @param id
-     * @return
-     */
-    void deleteById(Integer id);
-
-    /**
-     * 根据id查找
+     * 根据主键查找
      * @param id
      * @return
      */
     Object findById(Integer id);
-
-    /**
-     * 根据传入的hql查询结果
-     * @param hql
-     * @param parameters 参数，可为null或不传
-     * @return
-     */
-    List findListByHql(String hql, Object...parameters);
 }

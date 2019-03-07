@@ -1,10 +1,14 @@
 package com.lancet.blog.service.impl;
 
+import com.lancet.base.service.BaseService;
+import com.lancet.base.service.impl.BaseServiceImpl;
 import com.lancet.blog.dao.BlogClassifyDao;
 import com.lancet.blog.entity.BlogClassify;
 import com.lancet.blog.service.BlogClassifyService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @Description 博客分类Service实现类
@@ -13,28 +17,13 @@ import org.springframework.stereotype.Service;
  * @Version 1.0
  **/
 @Service
-public class BlogClassifyServiceImpl implements BlogClassifyService {
+public class BlogClassifyServiceImpl extends BaseServiceImpl implements BlogClassifyService {
 
     @Autowired
     private BlogClassifyDao blogClassifyDao;
 
     @Override
-    public void add(BlogClassify blogClassify) {
-        blogClassifyDao.add(blogClassify);
-    }
-
-    @Override
-    public void update(BlogClassify blogClassify) {
-        blogClassifyDao.update(blogClassify);
-    }
-
-    @Override
-    public void delete(BlogClassify blogClassify) {
-        blogClassifyDao.delete(blogClassify);
-    }
-
-    @Override
-    public BlogClassify findById(Integer id) {
-        return blogClassifyDao.findById(id);
+    public List<BlogClassify> findAllClassify() {
+        return blogClassifyDao.findListByHql("from BlogClassify");
     }
 }

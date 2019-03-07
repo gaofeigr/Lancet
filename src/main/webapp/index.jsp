@@ -53,7 +53,7 @@
                         <li>
                             <a class="J_menuItem" href="form_validate.html">分类管理 <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                                <li><a class="J_menuItem" href="${contextPath}/jsp/blog/classify/main/blog_classify_edit.jsp">新建分类</a>
+                                <li><a class="J_menuItem" href="${contextPath}/blogClassify/main/add">新建分类</a>
                                 </li>
                                 <li><a class="J_menuItem" href="${contextPath}">所有分类</a>
                                 </li>

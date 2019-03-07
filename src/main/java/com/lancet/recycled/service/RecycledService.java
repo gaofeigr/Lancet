@@ -1,5 +1,6 @@
 package com.lancet.recycled.service;
 
+import com.lancet.base.service.BaseService;
 import com.lancet.recycled.entity.Recycled;
 
 /**
@@ -8,32 +9,5 @@ import com.lancet.recycled.entity.Recycled;
  * @Author GaoFei
  * @Version 1.0
  **/
-public interface RecycledService {
-    /**
-     * 新增
-     * @param recycled
-     * @return
-     */
-    void add(Recycled recycled);
-
-    /**
-     * 更新
-     * @param recycled
-     * @return
-     */
-    void update(Recycled recycled);
-
-    /**
-     * 删除
-     * @param recycled
-     * @return
-     */
-    void delete(Recycled recycled);
-
-    /**
-     * 根据主键查找
-     * @param id
-     * @return
-     */
-    Recycled findById(Integer id);
+public interface RecycledService extends BaseService {
 }

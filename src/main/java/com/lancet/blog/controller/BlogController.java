@@ -3,6 +3,7 @@ package com.lancet.blog.controller;
 import com.lancet.blog.entity.Blog;
 import com.lancet.blog.service.BlogClassifyService;
 import com.lancet.blog.service.BlogService;
+import com.lancet.person.entity.Person;
 import com.lancet.person.service.PersonService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,7 +42,7 @@ public class BlogController {
 
     @RequestMapping("/save")
     public String saveBlog(Blog blog) {
-        blog.setCreatePerson(personService.findById(1));
+        blog.setCreatePerson((Person) personService.findById(1));
         blog.setCreateTime(new Date());
 //        blogService.add(blog);
         return "/common/msg/success";
