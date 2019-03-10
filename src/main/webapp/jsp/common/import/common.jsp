@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="f" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <link rel="shortcut icon" href="${contextPath}/img/ico.ico" type="image/x-icon" />
 <%@ include file="/jsp/common/import/css.jsp" %>
 <%@ include file="/jsp/common/import/js.jsp" %>

@@ -1,5 +1,6 @@
 package com.lancet.person.controller;
 
+import com.lancet.base.controller.BaseController;
 import com.lancet.person.entity.Person;
 import com.lancet.person.service.PersonService;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ import java.util.Date;
  **/
 @Controller
 @RequestMapping("/person/main")
-public class PersonController {
+public class PersonController extends BaseController {
 
     @Resource
     public PersonService personService;

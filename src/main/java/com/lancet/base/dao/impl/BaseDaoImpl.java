@@ -1,6 +1,7 @@
 package com.lancet.base.dao.impl;
 
 import com.lancet.base.dao.BaseDao;
+import com.lancet.base.dao.Page;
 import com.lancet.person.entity.Person;
 import com.lancet.util.ArrayUtil;
 import com.lancet.util.ListUtil;
@@ -92,6 +93,7 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
     @Override
     public List findListByHql(String hql, Object...parameters) {
         List result;
+        parameters = ArrayUtil.clearEmptyItem(parameters);
         Session session = this.getSessionFactory().openSession();
         Query query = session.createQuery(hql);
         if (ArrayUtil.isNotEmpty(parameters)) {
@@ -104,5 +106,26 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
         result = query.list();
         session.close();
         return result;
+    }
+
+    @Override
+    public Page findPageByHql(Page page, String hql, Object... parameters) {
+        parameters = ArrayUtil.clearEmptyItem(parameters);
+        Session session = this.getSessionFactory().openSession();
+        Query query = session.createQuery(hql);
+        if (ArrayUtil.isNotEmpty(parameters)) {
+            //设置查询参数
+            String[] keys = StringUtil.findAllStr(hql, ":[A-Za-z0-9]*");
+            for (int i = 0; i < keys.length; i++) {
+                query.setParameter(keys[i].replace(":", ""), parameters[i]);
+            }
+        }
+        page.setTotal(query.list().size());
+        query.setFirstResult((page.getPageNumber() - 1) * page.getPageSize());
+        query.setMaxResults(page.getPageSize());
+        page.setRows(query.list());
+        page.setTotalPage((page.getTotal() + page.getPageSize() - 1) / page.getPageSize());
+        session.close();
+        return page;
     }
 }

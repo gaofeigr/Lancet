@@ -1,6 +1,7 @@
 package com.lancet.base.service;
 
 import com.lancet.base.dao.BaseDao;
+import com.lancet.base.dao.Page;
 import com.lancet.blog.entity.BlogClassify;
 
 /**
@@ -62,4 +63,16 @@ public interface BaseService {
      * @return
      */
     Object findById(Integer id);
+
+    /**
+     * 分页查询
+     * @return
+     */
+    Page findByPage();
+
+    /**
+     * 分页查询
+     * @return
+     */
+    Page findByPage(Page page, String hql, Object...parameters);
 }

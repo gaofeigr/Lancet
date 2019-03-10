@@ -66,4 +66,12 @@ public interface BaseDao {
      * @return
      */
     List findListByHql(String hql, Object...parameters);
+
+    /**
+     * 根据传入的hql分页查询结果
+     * @param hql hql，参数条件只能为英文字母和数字组合
+     * @param parameters 参数，可为null或不传
+     * @return 分页对象
+     */
+    Page findPageByHql(Page page, String hql, Object...parameters);
 }

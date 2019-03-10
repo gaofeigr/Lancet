@@ -1,5 +1,6 @@
 package com.lancet.recycled.controller;
 
+import com.lancet.base.controller.BaseController;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -9,5 +10,5 @@ import org.springframework.stereotype.Controller;
  * @Version 1.0
  **/
 @Controller
-public class RecycledController {
+public class RecycledController extends BaseController {
 }

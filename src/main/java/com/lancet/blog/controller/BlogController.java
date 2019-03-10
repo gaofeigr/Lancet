@@ -1,5 +1,6 @@
 package com.lancet.blog.controller;
 
+import com.lancet.base.controller.BaseController;
 import com.lancet.blog.entity.Blog;
 import com.lancet.blog.service.BlogClassifyService;
 import com.lancet.blog.service.BlogService;
@@ -19,7 +20,7 @@ import java.util.Date;
  **/
 @Controller
 @RequestMapping("/blog/main")
-public class BlogController {
+public class BlogController extends BaseController {
 
     @Resource
     private BlogService blogService;

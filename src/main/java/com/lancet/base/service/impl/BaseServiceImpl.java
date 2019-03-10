@@ -1,6 +1,7 @@
 package com.lancet.base.service.impl;
 
 import com.lancet.base.dao.BaseDao;
+import com.lancet.base.dao.Page;
 import com.lancet.base.service.BaseService;
 import com.lancet.util.SpringBeanUtil;
 import com.lancet.util.StringUtil;
@@ -46,10 +47,7 @@ public class BaseServiceImpl implements BaseService {
 
     @Override
     public BaseDao getBaseDao() {
-        if (null == this.baseDao) {
-            this.baseDao = (BaseDao) SpringBeanUtil.getBean(getDaoBeanName());
-        }
-        return this.baseDao;
+        return (BaseDao) SpringBeanUtil.getBean(getDaoBeanName());
     }
 
     @Override
@@ -70,5 +68,21 @@ public class BaseServiceImpl implements BaseService {
     @Override
     public Object findById(Integer id) {
         return getBaseDao().findById(id);
+    }
+
+    @Override
+    public Page findByPage() {
+        return findByPage(null, null);
+    }
+
+    @Override
+    public Page findByPage(Page page, String hql, Object... parameters) {
+        if (StringUtil.isNull(hql)) {
+            hql = "from " + getEntityName();
+        }
+        if (null == page) {
+            page = Page.getDefaultPage();
+        }
+        return getBaseDao().findPageByHql(page, hql, parameters);
     }
 }
