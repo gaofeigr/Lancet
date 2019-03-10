@@ -17,7 +17,7 @@ import java.util.Map;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Repository
+@Repository("personDao")
 public class PersonDaoImpl extends BaseDaoImpl implements PersonDao {
 
 }

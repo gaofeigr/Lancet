@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Service
+@Service("personService")
 public class PersonServiceImpl extends BaseServiceImpl implements PersonService {
 
     @Autowired

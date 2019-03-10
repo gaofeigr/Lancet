@@ -16,7 +16,7 @@ import java.util.List;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Service
+@Service("blogClassifyService")
 public class BlogClassifyServiceImpl extends BaseServiceImpl implements BlogClassifyService {
 
     @Autowired

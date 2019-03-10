@@ -61,7 +61,7 @@ public interface BaseDao {
 
     /**
      * 根据传入的hql查询结果
-     * @param hql
+     * @param hql hql，参数条件只能为英文字母和数字组合
      * @param parameters 参数，可为null或不传
      * @return
      */

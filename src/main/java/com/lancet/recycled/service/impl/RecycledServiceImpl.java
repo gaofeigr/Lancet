@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Service
+@Service("recycledService")
 public class RecycledServiceImpl extends BaseServiceImpl implements RecycledService {
 
     @Autowired

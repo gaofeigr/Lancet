@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Repository
+@Repository("baseDao")
 public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
 
     @Resource

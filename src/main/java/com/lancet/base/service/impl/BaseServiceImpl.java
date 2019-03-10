@@ -12,8 +12,10 @@ import org.springframework.stereotype.Service;
  * @Author GaoFei
  * @Version 1.0
  **/
-@Service
+@Service("baseService")
 public class BaseServiceImpl implements BaseService {
+
+    private BaseDao baseDao;
 
     @Override
     public String getClassName() {
@@ -34,17 +36,20 @@ public class BaseServiceImpl implements BaseService {
     }
 
     @Override
-    public String getBeanName() {
+    public String getDaoBeanName() {
         String beanName = getClassName();
         beanName = StringUtil.findStr(beanName, "[A-Za-z]*Impl");
-        beanName = beanName.replace("ServiceImpl", "DaoImpl");
+        beanName = beanName.replace("ServiceImpl", "Dao");
         beanName = beanName.replaceFirst(beanName.substring(0, 1), beanName.substring(0, 1).toLowerCase());
         return beanName;
     }
 
     @Override
     public BaseDao getBaseDao() {
-        return (BaseDao) SpringBeanUtil.getBean(getBeanName());
+        if (null == this.baseDao) {
+            this.baseDao = (BaseDao) SpringBeanUtil.getBean(getDaoBeanName());
+        }
+        return this.baseDao;
     }
 
     @Override

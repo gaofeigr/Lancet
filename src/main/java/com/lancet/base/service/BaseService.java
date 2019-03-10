@@ -24,10 +24,10 @@ public interface BaseService {
     String getEntityName();
 
     /**
-     * 获取BeanName
+     * 获取DaoBeanName
      * @return
      */
-    String getBeanName();
+    String getDaoBeanName();
 
     /**
      * 获取BaseDao
