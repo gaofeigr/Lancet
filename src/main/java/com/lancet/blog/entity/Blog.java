@@ -24,6 +24,12 @@ public class Blog {
     @NotNull
     private int id;
     /**
+     * 标题
+     */
+    @Basic(fetch = FetchType.LAZY)
+    @Column(nullable = false)
+    private String title;
+    /**
      * 正文
      */
     @Lob
@@ -98,5 +104,13 @@ public class Blog {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

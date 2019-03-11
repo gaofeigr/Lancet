@@ -44,7 +44,7 @@
                         <li>
                             <a class="J_menuItem" href="form_basic.html">博客管理 <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                                <li><a class="J_menuItem" href="${contextPath}/jsp/blog/main/blog_main_edit.jsp">新建博客</a>
+                                <li><a class="J_menuItem" href="${contextPath}/blog/main/add">新建博客</a>
                                 </li>
                                 <li><a class="J_menuItem" href="form_file_upload.html">所有博客</a>
                                 </li>
