@@ -1,6 +1,8 @@
 package com.lancet.blog.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.lancet.base.controller.BaseController;
+import com.lancet.base.dao.Page;
 import com.lancet.blog.entity.Blog;
 import com.lancet.blog.entity.BlogClassify;
 import com.lancet.blog.service.BlogClassifyService;
@@ -8,8 +10,11 @@ import com.lancet.blog.service.BlogService;
 import com.lancet.person.entity.Person;
 import com.lancet.person.service.PersonService;
 import com.lancet.util.DateUtil;
+import com.lancet.util.StringUtil;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -57,5 +62,22 @@ public class BlogController extends BaseController {
     public String saveBlog(Blog blog) {
         blogService.add(blog);
         return "/common/msg/success";
+    }
+
+    @RequestMapping("/blogList")
+    public String blogList(HttpServletRequest request) {
+        request.setAttribute("classify", request.getAttribute("classify"));
+        return "/blog/main/blog_main_list";
+    }
+
+    @RequestMapping("/list")
+    @ResponseBody
+    public String list(Page page,
+                       @RequestParam(name = "classify", required = false) String classify) {
+        String hql = "from " + blogService.getEntityName() + " where 1=1";
+        if (StringUtil.isNotNull(classify)) {
+            hql = " and classify.id = :id";
+        }
+        return JSON.toJSONString(blogService.findByPage(page, hql, classify));
     }
 }

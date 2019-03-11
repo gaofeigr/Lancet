@@ -7,6 +7,8 @@ import com.lancet.util.SpringBeanUtil;
 import com.lancet.util.StringUtil;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @Description 服务层基类，所有service都要继承此service
  * @Date 2019-3-8 00:31
@@ -84,5 +86,13 @@ public class BaseServiceImpl implements BaseService {
             page = Page.getDefaultPage();
         }
         return getBaseDao().findPageByHql(page, hql, parameters);
+    }
+
+    @Override
+    public List findByHql(String hql, Object... parameters) {
+        if (StringUtil.isNull(hql)) {
+            hql = "from " + getEntityName();
+        }
+        return getBaseDao().findListByHql(hql, parameters);
     }
 }

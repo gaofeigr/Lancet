@@ -26,6 +26,9 @@ public class StringUtil {
         if (content.trim().length() == 0) {
             return true;
         }
+        if (content.equalsIgnoreCase("null")) {
+            return true;
+        }
         return false;
     }
 

@@ -26,14 +26,13 @@ public class Blog {
     /**
      * 标题
      */
-    @Basic(fetch = FetchType.LAZY)
     @Column(nullable = false)
     private String title;
     /**
      * 正文
      */
     @Lob
-    @Basic(fetch = FetchType.LAZY)
+    @Basic(fetch = FetchType.EAGER)
     @Column(nullable = false)
     private String text;
     /**

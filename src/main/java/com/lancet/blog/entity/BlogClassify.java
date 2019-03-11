@@ -5,6 +5,7 @@ import com.lancet.person.entity.Person;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @Description 博客分类bean
@@ -48,6 +49,12 @@ public class BlogClassify {
     @ManyToOne(targetEntity = Person.class)
     @JoinColumn(name = "create_person_id", nullable = false)
     private Person createPerson;
+
+    /**
+     * 子分类
+     */
+    @Transient
+    private List<BlogClassify> childClassifys;
 
     public int getId() {
         return id;
@@ -95,5 +102,13 @@ public class BlogClassify {
 
     public void setCreatePerson(Person createPerson) {
         this.createPerson = createPerson;
+    }
+
+    public List<BlogClassify> getChildClassifys() {
+        return childClassifys;
+    }
+
+    public void setChildClassifys(List<BlogClassify> childClassifys) {
+        this.childClassifys = childClassifys;
     }
 }

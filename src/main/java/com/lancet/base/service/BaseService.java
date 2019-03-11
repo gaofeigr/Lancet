@@ -4,6 +4,8 @@ import com.lancet.base.dao.BaseDao;
 import com.lancet.base.dao.Page;
 import com.lancet.blog.entity.BlogClassify;
 
+import java.util.List;
+
 /**
  * @Description 服务层基类，所有service都要继承此service
  * @Date 2019-3-8 00:31
@@ -75,4 +77,10 @@ public interface BaseService {
      * @return
      */
     Page findByPage(Page page, String hql, Object...parameters);
+
+    /**
+     * hql查询
+     * @return
+     */
+    List findByHql(String hql, Object...parameters);
 }
