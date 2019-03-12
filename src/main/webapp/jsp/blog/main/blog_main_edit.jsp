@@ -38,6 +38,12 @@
                             </div>
                         </div>
                         <div class="form-group">
+                            <label class="col-sm-1 control-label">概述：</label>
+                            <div class="col-sm-11">
+                                <input type="text" name="summarize" class="form-control" placeholder="请输入概述" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-sm-1 control-label">正文：</label>
                             <div class="col-sm-11">
                                 <textarea id="text" name="text" placeholder="开始编写博客" autofocus>

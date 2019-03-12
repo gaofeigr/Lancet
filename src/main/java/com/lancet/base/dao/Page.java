@@ -84,11 +84,16 @@ public class Page<T> {
         return defaultPage;
     }
 
-    public static Page getDefaultPage(int pageNumber) {
-        if (null == defaultPage) {
+    /**
+     * @param pageSize 每页显示行数
+     * @return
+     */
+    public static Page getDefaultPage(int pageSize) {
+        if (null == defaultPage || defaultPage.getPageSize() != pageSize) {
             defaultPage = new Page();
-            defaultPage.setPageNumber(pageNumber);
+            defaultPage.setPageSize(pageSize);
         }
+        defaultPage.setPageNumber(1);
         return defaultPage;
     }
 }

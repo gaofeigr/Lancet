@@ -66,18 +66,20 @@ public class BlogController extends BaseController {
 
     @RequestMapping("/blogList")
     public String blogList(HttpServletRequest request) {
-        request.setAttribute("classify", request.getAttribute("classify"));
-        return "/blog/main/blog_main_list";
-    }
-
-    @RequestMapping("/list")
-    @ResponseBody
-    public String list(Page page,
-                       @RequestParam(name = "classify", required = false) String classify) {
+        String classify = String.valueOf(request.getAttribute("classify"));
         String hql = "from " + blogService.getEntityName() + " where 1=1";
         if (StringUtil.isNotNull(classify)) {
             hql = " and classify.id = :id";
         }
-        return JSON.toJSONString(blogService.findByPage(page, hql, classify));
+        request.setAttribute("blogs", blogService.findByHql(hql, classify));
+        return "/blog/main/blog_main_list";
+    }
+
+    @RequestMapping("/view")
+    public String blogView(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        Blog blog = (Blog) blogService.findById(Integer.valueOf(id));
+        request.setAttribute("blog", blog);
+        return "/blog/main/blog_main_view";
     }
 }

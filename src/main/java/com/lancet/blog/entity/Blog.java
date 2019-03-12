@@ -26,8 +26,13 @@ public class Blog {
     /**
      * 标题
      */
-    @Column(nullable = false)
+    @Column(nullable = false, length = 500)
     private String title;
+    /**
+     * 概述
+     */
+    @Column(nullable = false, length = 1000)
+    private String summarize;
     /**
      * 正文
      */
@@ -111,5 +116,13 @@ public class Blog {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSummarize() {
+        return summarize;
+    }
+
+    public void setSummarize(String summarize) {
+        this.summarize = summarize;
     }
 }
