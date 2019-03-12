@@ -44,14 +44,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="col-sm-1 control-label">正文：</label>
-                            <div class="col-sm-11">
-                                <textarea id="text" name="text" placeholder="开始编写博客" autofocus>
-
-                                </textarea>
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <label class="col-sm-1 control-label">分类：</label>
                             <div class="col-sm-11">
                                 <c:forEach var="classify" items="${allClassify}">
@@ -59,6 +51,14 @@
                                         <label><input type="radio" value="${classify.id}" name="classify.id"> <i></i> ${classify.classifyName}</label>
                                     </div>
                                 </c:forEach>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-1 control-label">正文：</label>
+                            <div class="col-sm-11">
+                                <textarea id="text" name="text" placeholder="开始编写博客" autofocus>
+
+                                </textarea>
                             </div>
                         </div>
                         <div class="form-group">

@@ -120,7 +120,7 @@
             <a href="login.html" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="${contextPath}/aa.jsp" frameborder="0" data-id="${contextPath}/index1.jsp" seamless></iframe>
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="${contextPath}/blog/main/add" frameborder="0" data-id="${contextPath}/index1.jsp" seamless></iframe>
         </div>
         <div class="footer">
             <div class="pull-right">&copy; 2019-2029 <a href="#" target="_blank">gao'f blog</a>
