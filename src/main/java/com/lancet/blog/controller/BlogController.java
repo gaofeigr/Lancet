@@ -102,4 +102,16 @@ public class BlogController extends BaseController {
         blogService.update(blog);
         return "/common/msg/success";
     }
+
+    @RequestMapping("/search")
+    public String blogSearch(HttpServletRequest request,
+                             @RequestParam(name = "search", required = false) String search) {
+        String hql = "from " + blogService.getEntityName() + " where 1=1";
+        if (StringUtil.isNotNull(search)) {
+            search = "%" + search + "%";
+            hql += " and (title like :title or summarize like :summarize or text like :text)";
+        }
+        request.setAttribute("blogs", blogService.findByHql(hql, search, search, search));
+        return "/blog/main/blog_main_list";
+    }
 }
