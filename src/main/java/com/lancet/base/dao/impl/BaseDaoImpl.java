@@ -54,6 +54,7 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
     public void add(Object entity) {
         Session session = this.getSessionFactory().openSession();
         session.save(entity);
+        session.flush();
         session.close();
     }
 
@@ -61,6 +62,7 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
     public void update(Object entity) {
         Session session = this.getSessionFactory().openSession();
         session.update(entity);
+        session.flush();
         session.close();
     }
 
@@ -68,6 +70,7 @@ public class BaseDaoImpl extends HibernateDaoSupport implements BaseDao {
     public void delete(Object entity) {
         Session session = this.getSessionFactory().openSession();
         session.delete(entity);
+        session.flush();
         session.close();
     }
 

@@ -31,11 +31,19 @@
                     </div>
                     ${blog.text}
                     <hr>
+                    <button id="editBtn" class="btn btn-sm btn-primary pull-right m-t-n-xs" type="button"><strong>编辑</strong></button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript" src="${contextPath}/js/tajs.js" charset="UTF-8"></script>
+<script>
+    $(function () {
+        $("#editBtn").click(function () {
+            window.location.href = "${contextPath}/blog/main/edit?id=${blog.id}";
+        })
+    })
+</script>
 </body>
 </html>

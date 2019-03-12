@@ -55,7 +55,7 @@ public class BlogController extends BaseController {
         request.setAttribute("createTime", createTime);
         request.setAttribute("createPerson", createPerson);
 
-        return "/blog/main/blog_main_edit";
+        return "/blog/main/blog_main_add";
     }
 
     @RequestMapping("/save")
@@ -81,5 +81,25 @@ public class BlogController extends BaseController {
         Blog blog = (Blog) blogService.findById(Integer.valueOf(id));
         request.setAttribute("blog", blog);
         return "/blog/main/blog_main_view";
+    }
+
+    @RequestMapping("/edit")
+    public String blogEdit(HttpServletRequest request) {
+        String id = request.getParameter("id");
+        Blog blog = (Blog) blogService.findById(Integer.valueOf(id));
+        String lastModifyTime = DateUtil.formatDataToString(new Date(), null);
+        List<BlogClassify> allClassify = blogClassifyService.findAllClassify();
+
+        request.setAttribute("allClassify", allClassify);
+        request.setAttribute("lastModifyTime", lastModifyTime);
+        request.setAttribute("createTime", DateUtil.formatDataToString(blog.getCreateTime(), null));
+        request.setAttribute("blog", blog);
+        return "/blog/main/blog_main_edit";
+    }
+
+    @RequestMapping("/saveEdit")
+    public String blogSaveEdit(Blog blog) {
+        blogService.update(blog);
+        return "/common/msg/success";
     }
 }

@@ -21,9 +21,9 @@
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox float-e-margins">
-                <form class="form-horizontal" action="${contextPath}/blog/main/saveEdit" method="post">
+                <form class="form-horizontal" action="${contextPath}/blog/main/save" method="post">
                     <div class="ibox-title">
-                        <h5>编辑博客</h5>
+                        <h5>新建博客</h5>
                     </div>
                     <div class="ibox-content">
                         <div class="form-group">
@@ -34,21 +34,20 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">标题：</label>
                             <div class="col-sm-11">
-                                <input type="text" name="title" class="form-control" value="${blog.title}" autocomplete="off">
-                                <input type="hidden" name="id" class="form-control" value="${blog.id}" autocomplete="off">
+                                <input type="text" name="title" class="form-control" placeholder="请输入标题" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">概述：</label>
                             <div class="col-sm-11">
-                                <input type="text" name="summarize" class="form-control" value="${blog.summarize}" autocomplete="off">
+                                <input type="text" name="summarize" class="form-control" placeholder="请输入概述" autocomplete="off">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">正文：</label>
                             <div class="col-sm-11">
-                                <textarea id="text" name="text" autofocus>
-                                    ${blog.text}
+                                <textarea id="text" name="text" placeholder="开始编写博客" autofocus>
+
                                 </textarea>
                             </div>
                         </div>
@@ -57,7 +56,7 @@
                             <div class="col-sm-11">
                                 <c:forEach var="classify" items="${allClassify}">
                                     <div class="radio-inline i-checks">
-                                        <label><input type="radio" value="${classify.id}" ${classify.id == blog.classify.id ? "checked" : ""} name="classify.id"> <i></i> ${classify.classifyName}</label>
+                                        <label><input type="radio" value="${classify.id}" name="classify.id"> <i></i> ${classify.classifyName}</label>
                                     </div>
                                 </c:forEach>
                             </div>
@@ -65,20 +64,14 @@
                         <div class="form-group">
                             <label class="col-sm-1 control-label">创建者：</label>
                             <div class="col-sm-11">
-                                <input type="text" name="createPerson.name" value="${blog.createPerson.name}" class="form-control" readonly>
-                                <input type="hidden" name="createPerson.id" value="${blog.createPerson.id}" class="form-control">
+                                <input type="text" name="createPerson.name" value="${createPerson.name}" class="form-control" readonly>
+                                <input type="hidden" name="createPerson.id" value="${createPerson.id}" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-sm-1 control-label">创建时间：</label>
                             <div class="col-sm-11">
                                 <input name="createTime" class="form-control" value="${createTime}" readonly>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-1 control-label">最后修改时间：</label>
-                            <div class="col-sm-11">
-                                <input name="createTime" class="form-control" value="${lastModifyTime}" readonly>
                             </div>
                         </div>
                     </div>
