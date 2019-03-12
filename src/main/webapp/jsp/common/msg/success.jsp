@@ -9,9 +9,22 @@
 <%@ include file="/jsp/common/import/common.jsp" %>
 <html>
 <head>
-    <title>Lancet - 操作成功</title>
+    <title></title>
 </head>
 <body>
-
+<h1 id="msg">操作成功，3秒后此窗口自动关闭。</h1>
+<script>
+    $(function () {
+        var number = 2;
+        setInterval(function () {
+            $("#msg").text("操作成功，"+(number--)+"秒后此窗口自动关闭。");
+        }, 1000);
+        setTimeout(function () {
+            window.opener=null;
+            window.open('','_self');
+            window.close();
+        }, 3000);
+    })
+</script>
 </body>
 </html>
