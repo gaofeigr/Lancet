@@ -73,6 +73,7 @@ public class BlogController extends BaseController {
             hql += " and classify.id = :id";
             classifyId = Integer.valueOf(classify.substring(0, 1));
         }
+        hql += " order by createTime desc";
         request.setAttribute("blogs", blogService.findByHql(hql, classifyId));
         return "/blog/main/blog_main_list";
     }
@@ -113,6 +114,7 @@ public class BlogController extends BaseController {
             search = "%" + search + "%";
             hql += " and (title like :title or summarize like :summarize or text like :text)";
         }
+        hql += " order by createTime desc";
         request.setAttribute("blogs", blogService.findByHql(hql, search, search, search));
         return "/blog/main/blog_main_list";
     }
