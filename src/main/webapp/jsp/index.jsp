@@ -52,11 +52,11 @@
                             </ul>
                         </li>
                         <li>
-                            <a class="J_menuItem" href="form_basic.html">分类管理 <span class="fa arrow"></span></a>
+                            <a class="J_menuItem" href="${contextPath}/jsp/blog/classify/index.jsp">分类管理 <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
                                 <c:forEach var="classify" items="${classifies}">
                                     <li>
-                                        <a class="J_menuItem" href="${contextPath}/blog/main/add">${classify.classifyName}</a>
+                                        <a class="J_menuItem" href="${contextPath}/jsp/blog/classify/index.jsp?parentId=${classify.id}">${classify.classifyName}</a>
                                     </li>
                                 </c:forEach>
                             </ul>

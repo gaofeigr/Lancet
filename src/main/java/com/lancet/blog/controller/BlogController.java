@@ -65,13 +65,15 @@ public class BlogController extends BaseController {
     }
 
     @RequestMapping("/blogList")
-    public String blogList(HttpServletRequest request) {
-        String classify = String.valueOf(request.getAttribute("classify"));
+    public String blogList(HttpServletRequest request,
+                           @RequestParam(name = "classify", required = false) String classify) {
+        Integer classifyId = null;
         String hql = "from " + blogService.getEntityName() + " where 1=1";
-        if (StringUtil.isNotNull(classify)) {
-            hql = " and classify.id = :id";
+        if (null != classify) {
+            hql += " and classify.id = :id";
+            classifyId = Integer.valueOf(classify.substring(0, 1));
         }
-        request.setAttribute("blogs", blogService.findByHql(hql, classify));
+        request.setAttribute("blogs", blogService.findByHql(hql, classifyId));
         return "/blog/main/blog_main_list";
     }
 

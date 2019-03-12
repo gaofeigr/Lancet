@@ -66,6 +66,8 @@ public class BlogClassifyController extends BaseController {
 
     @RequestMapping("/save")
     public String saveBlog(BlogClassify blogClassify) {
+        blogClassify.setCreateTime(new Date());
+        blogClassify.setCreatePerson((Person) personService.findById(1));
         blogClassifyService.add(blogClassify);
         return "/common/msg/success";
     }

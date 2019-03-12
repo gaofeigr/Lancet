@@ -30,19 +30,19 @@
                     <%--<input type="hidden" name="parentClassify.id" value="parentClassify.id"/>--%>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">创建者：</label>
-                <div class="col-sm-8">
-                    <input type="text" name="createPerson.name" value="${createPerson.name}" class="form-control" readonly>
-                    <input type="hidden" name="createPerson.id" value="${createPerson.id}" class="form-control">
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-3 control-label">创建时间：</label>
-                <div class="col-sm-8">
-                    <input name="createTime" class="form-control" value="${createTime}" readonly>
-                </div>
-            </div>
+            <%--<div class="form-group">--%>
+                <%--<label class="col-sm-3 control-label">创建者：</label>--%>
+                <%--<div class="col-sm-8">--%>
+                    <%--<input type="text" name="createPerson.name" value="${createPerson.name}" class="form-control" readonly>--%>
+                    <%--<input type="hidden" name="createPerson.id" value="${createPerson.id}" class="form-control">--%>
+                <%--</div>--%>
+            <%--</div>--%>
+            <%--<div class="form-group">--%>
+                <%--<label class="col-sm-3 control-label">创建时间：</label>--%>
+                <%--<div class="col-sm-8">--%>
+                    <%--<input name="createTime" class="form-control" value="${createTime}" readonly>--%>
+                <%--</div>--%>
+            <%--</div>--%>
             <div class="form-group">
                 <div class="col-sm-4 col-sm-offset-8">
                     <button class="btn btn-primary" type="submit">保存</button>
